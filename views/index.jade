@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1 Your Schedule
+  table
+    tr
+      th ID
+      th Firstname
+      th Lastname
+      th Day Of Week
+      th Start Time
+      th End Time
+    -var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    -var x = 1
+  
+     -for(var i=0; i<data.length; i++) {
+      tr
+        td= [x + i]
+        td= data[i].firstname
+        td= data[i].lastname
+        td= days[data[i].day_of_week -1]
+        td= data[i].start_time
+        td= data[i].end_time
+     -}  
+
+  br
+  a(href="/schedules", target="_self") Fill your schedule
+  br
+  button(type="submit") Logout

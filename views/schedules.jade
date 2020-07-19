@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  h1 Schedule Form
+  p Please fill up #{title}
+  form(name="myForm", method="POST", action="/schedules/create")
+        div.input4
+            span.label Username: 
+            br
+            input(type="email", id="email", name="username")
+            br
+            br
+        div.input
+            span.label Day of week: 
+            br
+            select(id="day_of_week", name="day_of_week")
+                   option(value="1", Monday selected) Monday
+                   option(value="2", Tuesday) Tuesday
+                   option(value="3", Wednesday) Wednesday
+                   option(value="4", Thursday) Thursday
+                   option(value="5", Friday) Friday
+                   option(value="6", Saturday) Saturday
+                   option(value="7", Sunday) Sunday
+            br
+            br
+        div.input
+            span.label Start time: 
+            br
+            input(type="time", id="start_time" , name="start_time", placeholder="HHMMSS")
+            br
+            br
+        div.input
+            span.label End time
+            br
+            input(type="time", id="end_time" , name="end_time", placeholder="HHMMSS")
+            br
+            br
+        div.actions
+            input(type="submit", value="Add")
+  br          
+  a(href="/", target="_self") Show Schedule
+

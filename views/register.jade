@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  h1 Register
+    -if (message){
+       .alert.messageClass #{message}   
+    -}   
+       
+  form(name="registerForm", method="POST", action="/register/create")
+        div.input
+            span.label First Name: 
+            br
+            input(type="text", id="firstname", name="firstname")
+            br
+            br
+        div.input
+            span.label Last Name: 
+            br
+            input(type="text", id="lastname", name="lastname") 
+            br
+            br
+        div.input
+            span.label Email Address: 
+            br
+            input(type="email", id="email" , name="email", placeholder="name@example.com")
+            br
+            br
+        div.input
+            span.label Password:
+            br
+            input(type="password", id="password" , name="password")
+            br
+            br
+        div.input
+            span.label Confirm Password:
+            br
+            input(type="password", id="confirmPassword" , name="confirmPassword")
+            br
+            br
+        div.actions
+            input(type="submit", id="register", value="Register")
+
+    button(type="submit" id="logout" onclick="window.location.href = '/register';") Logout
